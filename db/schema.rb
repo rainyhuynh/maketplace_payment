@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_23_020107) do
+ActiveRecord::Schema.define(version: 2020_12_23_022742) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 2020_12_23_020107) do
     t.integer "current_donation_amount", default: 0
     t.datetime "expires_at", default: "2021-01-22 02:02:37"
     t.string "status", default: "active"
+    t.string "slug"
+    t.index ["slug"], name: "index_projects_on_slug", unique: true
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
