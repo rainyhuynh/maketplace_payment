@@ -9,6 +9,7 @@ class ExpireProjectJob < ApplicationJob
     @project.status = "inactive"
     @project.save! #save ! => If the model is new a record gets created in the database, otherwise the existing record gets updated
 
+    #send email to user for expire project
     UserMailer.with(project: @project).project_expired_notice.deliver_later
   
   end

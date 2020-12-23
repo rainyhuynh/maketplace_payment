@@ -6,8 +6,8 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.project_expired_notice.subject
   #
   def project_expired_notice
-    @greeting = "Hi"
+    @project = params[:project]
 
-    mail to: "to@example.org"
+    mail to: @project.user.email, subject: "Your project has expired"
   end
 end

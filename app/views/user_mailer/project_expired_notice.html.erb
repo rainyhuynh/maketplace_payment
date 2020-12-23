@@ -1,5 +1,3 @@
-<h1>User#project_expired_notice</h1>
+<h1><%= @project.user.name %></h1>
 
-<p>
-  <%= @greeting %>, find me in app/views/user_mailer/project_expired_notice.html.erb
-</p>
+<p>We wanted to inform you that the project <strong><%= @project.title %></strong> has met its expiration and is no longer active. <%= link_to "View your project", project_url(@project), target: "_blank" %>.</p>
